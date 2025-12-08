@@ -304,6 +304,12 @@ body {
     gap: 1.5rem;
 }
 
+.modal-empty {
+    font-family: 'General Sans', sans-serif;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
 .modal-link {
     font-family: 'General Sans', sans-serif;
     font-size: 1.125rem;

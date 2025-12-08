@@ -4,61 +4,36 @@ document.addEventListener('DOMContentLoaded', function() {
     const modal = document.getElementById('project-modal');
     const modalTitle = document.getElementById('modal-project-title');
     const modalClose = document.querySelector('.modal-close');
-    const modalLinks = {
-        github: document.getElementById('modal-link-github'),
-        demo: document.getElementById('modal-link-demo'),
-        case: document.getElementById('modal-link-case')
-    };
+    const modalLinksContainer = document.getElementById('modal-links');
 
     // Project data with placeholder links
     const projectData = {
         1: {
-            title: 'Project Title One',
-            links: {
-                github: '#',
-                demo: '#',
-                case: '#'
-            }
+            title: 'STANDART',
+            links: [
+                { label: 'Website', url: 'https://maisonstandart.com' },
+                { label: 'Instagram', url: 'https://www.instagram.com/maisonstandart/' }
+            ]
         },
         2: {
-            title: 'Project Title Two',
-            links: {
-                github: '#',
-                demo: '#',
-                case: '#'
-            }
+            title: 'OKSI',
+            links: [
+                { label: 'Live demo', url: 'https://youtu.be/eubZKbxceGU' },
+                { label: 'My master thesis', url: 'https://drive.google.com/file/d/1iq8QXytzOKxZ9TGqOjPFLvftxotBDA37/view?usp=sharing' }
+            ]
         },
         3: {
-            title: 'Project Title Three',
-            links: {
-                github: '#',
-                demo: '#',
-                case: '#'
-            }
+            title: 'Aquaponic System',
+            links: [
+                { label: 'Live demo', url: 'https://youtube.com/shorts/YerZrfkVjG0?feature=share' },
+                { label: 'Github', url: 'https://github.com/ArthurSZANTYR/aquaponics-platform' }
+            ]
         },
         4: {
-            title: 'Project Title Four',
-            links: {
-                github: '#',
-                demo: '#',
-                case: '#'
-            }
-        },
-        5: {
-            title: 'Project Title Five',
-            links: {
-                github: '#',
-                demo: '#',
-                case: '#'
-            }
-        },
-        6: {
-            title: 'Project Title Six',
-            links: {
-                github: '#',
-                demo: '#',
-                case: '#'
-            }
+            title: 'KOLOBIGO',
+            links: [
+                { label: 'Kickstarter', url: 'https://www.kickstarter.com/projects/kolobigo/quickstarter-kolobigo-the-ultimate-phone-strap' }
+            ]
         }
     };
 
@@ -72,9 +47,22 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (project) {
                 modalTitle.textContent = project.title;
-                modalLinks.github.href = project.links.github;
-                modalLinks.demo.href = project.links.demo;
-                modalLinks.case.href = project.links.case;
+                modalLinksContainer.innerHTML = '';
+
+                if (project.links && project.links.length > 0) {
+                    project.links.forEach(link => {
+                        const anchor = document.createElement('a');
+                        anchor.className = 'modal-link';
+                        anchor.href = link.url || '#';
+                        anchor.textContent = link.label || 'Link';
+                        modalLinksContainer.appendChild(anchor);
+                    });
+                } else {
+                    const emptyState = document.createElement('p');
+                    emptyState.className = 'modal-empty';
+                    emptyState.textContent = 'No links available for this project.';
+                    modalLinksContainer.appendChild(emptyState);
+                }
                 modal.classList.add('active');
                 document.body.style.overflow = 'hidden';
             }
@@ -119,4 +107,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
 
