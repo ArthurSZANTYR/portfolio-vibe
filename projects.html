@@ -6,11 +6,13 @@
     <title>Portfolio — Projects</title>
     <link href="https://api.fontshare.com/v2/css?f[]=general-sans@400&f[]=trench-slab@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <nav class="nav">
         <a href="index.html" class="nav-link">Home</a>
         <a href="projects.html" class="nav-link active">Projects</a>
+        <a href="contact.html" class="nav-link">Contact</a>
     </nav>
 
     <main class="main">
@@ -20,36 +22,61 @@
         </section>
 
         <section class="projects-grid">
-            <article class="project-card">
+            <article class="project-card" data-project="1">
+                <img src="photos/project1.jpeg" alt="Project Title One" class="project-image">
                 <h2 class="project-title">Project Title One</h2>
                 <p class="project-description">This is placeholder text describing the first project. It should explain what the project is about, what technologies were used, and what problem it solves.</p>
+                <button class="project-link-btn">Learn more</button>
             </article>
 
-            <article class="project-card">
+            <article class="project-card" data-project="2">
+                <img src="photos/project2.jpeg" alt="Project Title Two" class="project-image">
                 <h2 class="project-title">Project Title Two</h2>
                 <p class="project-description">This is placeholder text describing the second project. Each project card follows the same structure for consistency and clarity.</p>
+                <button class="project-link-btn">Learn more</button>
             </article>
 
-            <article class="project-card">
+            <article class="project-card" data-project="3">
+                <img src="photos/project3.jpeg" alt="Project Title Three" class="project-image">
                 <h2 class="project-title">Project Title Three</h2>
                 <p class="project-description">This is placeholder text describing the third project. The grid layout adapts to different screen sizes while maintaining visual balance.</p>
+                <button class="project-link-btn">Learn more</button>
             </article>
 
-            <article class="project-card">
+            <article class="project-card" data-project="4">
+                <img src="photos/project4.jpeg" alt="Project Title Four" class="project-image">
                 <h2 class="project-title">Project Title Four</h2>
                 <p class="project-description">This is placeholder text describing the fourth project. You can add as many projects as needed, and they will arrange themselves in a responsive grid.</p>
+                <button class="project-link-btn">Learn more</button>
             </article>
 
-            <article class="project-card">
+            <article class="project-card" data-project="5">
+                <img src="photos/project5.jpeg" alt="Project Title Five" class="project-image">
                 <h2 class="project-title">Project Title Five</h2>
                 <p class="project-description">This is placeholder text describing the fifth project. The design remains clean and minimal regardless of the number of projects displayed.</p>
+                <button class="project-link-btn">Learn more</button>
             </article>
 
-            <article class="project-card">
+            <article class="project-card" data-project="6">
+                <img src="photos/project6.jpeg" alt="Project Title Six" class="project-image">
                 <h2 class="project-title">Project Title Six</h2>
                 <p class="project-description">This is placeholder text describing the sixth project. Each card uses the accent color strategically to draw attention without overwhelming the design.</p>
+                <button class="project-link-btn">Learn more</button>
             </article>
         </section>
+
+        <!-- Project Detail Modal -->
+        <div id="project-modal" class="project-modal">
+            <div class="modal-content">
+                <button class="modal-close">&times;</button>
+                <h2 class="modal-title" id="modal-project-title"></h2>
+                <div class="modal-links">
+                    <a href="#" class="modal-link" id="modal-link-github">GitHub link</a>
+                    <a href="#" class="modal-link" id="modal-link-demo">Live demo</a>
+                    <a href="#" class="modal-link" id="modal-link-case">Case study</a>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="footer">
