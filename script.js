@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Project data with placeholder links
     const projectData = {
         1: {
-            title: 'STANDART',
+            title: 'STREAKS',
             links: [
                 { label: 'Website', url: 'https://streaks-campus.fr' },
                 { label: 'Instagram', url: 'https://www.instagram.com/streaks_campus/' }
