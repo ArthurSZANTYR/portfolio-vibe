@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
         1: {
             title: 'STANDART',
             links: [
-                { label: 'Website', url: 'https://maisonstandart.com' },
-                { label: 'Instagram', url: 'https://www.instagram.com/maisonstandart/' }
+                { label: 'Website', url: 'https://streaks-campus.fr' },
+                { label: 'Instagram', url: 'https://www.instagram.com/streaks_campus/' }
             ]
         },
         2: {
